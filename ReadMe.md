@@ -20,6 +20,7 @@
 
 5 13 17 26 30
 
+<<<<<<< HEAD:Assign.md
 
 (Tyra help)
 
@@ -46,3 +47,8 @@
 ## Zion
 
 12 17 29 33
+=======
+## Zion
+
+
+>>>>>>> fce02c2d34a72e022dc266729b842c2e713a9bb9:ReadMe.md
