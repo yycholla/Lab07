@@ -30,7 +30,13 @@ This is a test to push.
     size() returns 0
     toString returns "[]"
 2) [] -> addToFront(A) -> [A] //TODO
-3) [] -> addToRear(A) -> [A] //TODO
+3) [] -> addToRear(A) -> [A] //Tyra
+  Test:
+   addToRear("A")
+   size() == 1
+   get(0) equals("A") should return A 
+   isEmpty()
+   toString() equals("[A]") should be [A]
 4) [] -> add(A) -> [A] //TODO
 5) [] -> add(0,A) -> [A] //TODO
 6) [A] -> addToFront(B) -> [B,A]
@@ -77,11 +83,23 @@ This is a test to push.
 7) [A] -> addToRear(B) -> [A,B] //TODO
 8) [A] -> addAfter(B,A) -> [A,B]
 9) [A] -> add(B) -> [A,B]
-10) [A] -> add(0,B) -> [B,A] //TODO
+10) [A] -> add(0,B) -> [B,A] //Tyra
+  Test:
+    add(0, "B")
+    size() == 1
+    get(0) equals("B") should reutrn B
+    isEmpty() should no longer be is empty 
+    toString() equals("[B]") should be [B]
 11) [A] -> add(1,B) -> [A,B]
 12) [A] -> removeFirst() -> [] //TODO
 13) [A] -> removeLast() -> [] //TODO
-14) [A] -> remove(A) -> [] //TODO
+14) [A] -> remove(A) -> [] //Tyra
+  Test:
+    addToRear("A") list is A
+    remove("A")
+    size() == 0
+    isEmpty() should now be empty
+    toString() equals("[]") should be []
 15) [A] -> remove(0) -> [] //TODO
 16) [A] -> set(0,B) -> [B] //TODO
 17) [A,B] -> addToFront(C) -> [C,A,B] //TODO
@@ -93,7 +111,16 @@ This is a test to push.
 23) [A,B] -> add(1,C) -> [A,C,B] //TODO
 24) [A,B] -> add (2,C) -> [A,B,C]
 25) [A,B] -> removeFirst() -> [B] //TODO
-26) [A,B] -> removeLast() -> [A] //TODO
+26) [A,B] -> removeLast() -> [A] //Tyra
+  Test:
+    addToRear("A") list is [A]
+    addToRear("B") list is [A, B]
+    removeLast()
+    equals("B")
+    size() == 1
+    get(0) equals ("A") should return A
+    isEmpty() should not be empty
+    toString() equals("[A]") lsit should be [A]
 27) [A,B] -> remove(A) -> [B] //TODO
 28) [A,B] -> remove(B) -> [A] //TODO
 29) [A,B] -> remove(0) -> [B] //TODO
