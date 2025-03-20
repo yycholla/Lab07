@@ -30,7 +30,7 @@ This is a test to push.
     size() returns 0
     toString returns "[]"
 2) [] -> addToFront(A) -> [A] //TODO
-3) [] -> addToRear(A) -> [A] //Tyra
+3) [] -> addToRear(A) -> [A] @Tyra
   Test:
    addToRear("A")
    size() == 1
@@ -83,7 +83,7 @@ This is a test to push.
 7) [A] -> addToRear(B) -> [A,B] //TODO
 8) [A] -> addAfter(B,A) -> [A,B]
 9) [A] -> add(B) -> [A,B]
-10) [A] -> add(0,B) -> [B,A] //Tyra
+10) [A] -> add(0,B) -> [B,A] @Tyra
   Test:
     add(0, "B")
     size() == 1
@@ -93,7 +93,7 @@ This is a test to push.
 11) [A] -> add(1,B) -> [A,B]
 12) [A] -> removeFirst() -> [] //TODO
 13) [A] -> removeLast() -> [] //TODO
-14) [A] -> remove(A) -> [] //Tyra
+14) [A] -> remove(A) -> [] @Tyra
   Test:
     addToRear("A") list is A
     remove("A")
@@ -111,7 +111,7 @@ This is a test to push.
 23) [A,B] -> add(1,C) -> [A,C,B] //TODO
 24) [A,B] -> add (2,C) -> [A,B,C]
 25) [A,B] -> removeFirst() -> [B] //TODO
-26) [A,B] -> removeLast() -> [A] //Tyra
+26) [A,B] -> removeLast() -> [A] @Tyra
   Test:
     addToRear("A") list is [A]
     addToRear("B") list is [A, B]
