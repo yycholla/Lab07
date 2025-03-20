@@ -32,11 +32,11 @@ This is a test to push.
 2) [] -> addToFront(A) -> [A] //TODO
 3) [] -> addToRear(A) -> [A] @Tyra
   Test:
-   addToRear("A")
-   size() == 1
-   get(0) equals("A") should return A 
-   isEmpty()
-   toString() equals("[A]") should be [A]
+    addToRear("A")
+    size() == 1
+    get(0) equals("A") should return A 
+    isEmpty()
+    toString() equals("[A]") should be [A]
 4) [] -> add(A) -> [A] //TODO
 5) [] -> add(0,A) -> [A] //TODO
 6) [A] -> addToFront(B) -> [B,A]
