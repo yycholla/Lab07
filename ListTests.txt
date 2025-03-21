@@ -294,6 +294,7 @@ This is a test to push. // Test
 29) [A,B] -> remove(0) -> [B] //TODO
 30) [A,B] -> remove(1) -> [A] @KELSI-DONE
   Tests:
+    // Adding Elements Test
     addToFront(X) throws no Exception -> [X,A]
     addToRear(X) throws no Exception -> [A,X]
     addAfter(X, Z) throws NoSuchElementException
@@ -301,21 +302,45 @@ This is a test to push. // Test
     add(-1, X) throws IndexOutOfBoundsException
     add(0, X) throws no Exception -> [X]
     add(1, X) throws no Exception -> [A,X]
+
+    // Edge Case
+    add(2, X) throws IndexOutOfBoundsException
+
+    // Removing Elements Test
     removeFirst() throws no Exception -> []
     removeLast() throws no Exception -> []
     remove(X) throws NoSuchElementException
     remove(-1) throws IndexOutOfBoundsException
     remove(0) throws no Exception []
+
+    // Edge Case
+    remove(1) throws IndexOutOfBoundsException
+
+    // Modifying Element Test
     set(-1, X) throws IndexOutOfBoundsException
     set(0, X) throws no Exception -> [X]
+
+    // Edge Case
+    set(1, X) throws IndexOutOfBoundsException
+
+    // Retrieving Element Test
     get(-1) returns IndexOutOfBoundsException
     get(0) returns "A"
+
+    // Edge Case
+    get(1) throws IndexOutOfBoundsException
+
+    // Searching Test
     indexOf(X) returns "-1"
     first() returns "A"
     last() returns "A"
     contains(X) returns "false"
+
+    // Checking Size and State Test
     isEmpty() returns "false"
     size() returns "1"
+
+    // String Representation of List 
     toString() returns "[A]"
 
 31) [A,B] -> set(0,C) -> [C,B]
