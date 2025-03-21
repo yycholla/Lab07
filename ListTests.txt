@@ -31,32 +31,32 @@ This is a test to push. // Test
     toString returns "[]"
 2) [] -> addToFront(A) -> [A] //TODO
 3) [] -> addToRear(A) -> [A] //TODO
-4) [] -> add(A) -> [A] //TODO
+4) [] -> add(A) -> [A] // KELSI - DONE
   Tests:
-    addToFront(X) 
-    addToRear(X)
-    addAfter(X, Z)
-    add(X)
-    add(-1, X)
-    add(0, X)
-    add(1, X)
-    removeFirst()
-    removeLast()
-    remove(X)
-    remove(-1)
-    remove(0)
-    set(-1, X)
-    set(0, X)
-    get(-1)
-    get(0)
-    indexOf(X)
-    first()
-    last()
-    contains(X)
-    isEmpty()
-    size()
-    toString
-
+    addToFront(X) throws no Exception -> [X, A]
+    addToRear(X) throws no Exception -> [A, X]
+    addAfter(X, Z) throws NoSuchElementException
+    add(X) throws no Exception -> [A, X]
+    add(-1, X) throw IndexOutOfBoundsException
+    add(0, X) throws no Exception -> [X, A]
+    add(1, X) throws no Exception -> [A, X]
+    removeFirst() throws no Exception -> []
+    removeLast() throws no Exception -> []
+    remove(X) throws NoSuchElementException
+    remove(-1) throws IndexOutOfBoundsException
+    remove(0) throws no Exception -> []
+    set(-1, X) throws IndexOutOfBoundsException
+    set(0, X) throws no Exception -> [X]
+    get(-1) throws IndexOutOfBoundsException
+    get(0) throws no Exception -> "A"
+    indexOf(X) returns -1
+    first() returns "A"
+    last() returns "A"
+    contains(X) returns "false"
+    isEmpty() returns "false" 
+    size() returns "1"
+    toString returns "[A]"
+   
 5) [] -> add(0,A) -> [A] //TODO
 6) [A] -> addToFront(B) -> [B,A]
   Tests:
@@ -107,22 +107,121 @@ This is a test to push. // Test
 12) [A] -> removeFirst() -> [] //TODO
 13) [A] -> removeLast() -> [] //TODO
 14) [A] -> remove(A) -> [] //TODO
-15) [A] -> remove(0) -> [] //TODO
+Tests:
+    addToFront(X) throws no Exception -> [X]
+    addToRear(X) throws no Exception -> [X]
+    addAfter(X, Z) throws NoSuchElementException
+    add(X) throws NoSuchElementException -> [X]
+    add(-1, X) throws IndexOutOfBoundsException
+    add(0, X) throws no Exception [X]
+    add(1, X) throws IndexOutOfBoundsException
+    removeFirst() throws NoSuchElementException
+    removeLast() throws NoSuchElementException
+    remove(X) throws NoSuchElementException
+    remove(-1) throws IndexOutOfBoundsException
+    remove(0) throws IndexOutOfBoundsException
+    set(-1, X) throws IndexOutOfBoundsException
+    set(0, X) throws NoSuchElementException
+    get(-1) returns IndexOutOfBoundsException
+    get(0) returns NoSuchElementException
+    indexOf(X) returns -1
+    first() throws NoSuchElementException
+    last() throws NoSuchElementException
+    contains(X) returns "false"
+    isEmpty() returns "true"
+    size() returns "0"
+    toString returns []
+15) [A] -> remove(0) -> [] // KELSI - DONE
 16) [A] -> set(0,B) -> [B] //TODO
 17) [A,B] -> addToFront(C) -> [C,A,B] //TODO
 18) [A,B] -> addToRear(C) -> [A,B,C]
 19) [A,B] -> addAfter(C,A) -> [A,C,B]
 20) [A,B] -> addAfter(C,B) -> [A,B,C] //TODO
+  Tests:
+    addToFront(X) throws no Exception -> [X,A,B,C]
+    addToRear(X) throws no Exception -> [A,B,C,X]
+    addAfter(X, Z) throws NoSuchElementException
+    add(X) throws no Exception -> [X,A,B,C]
+    add(-1, X) throws IndexOutOfBoundsException
+    add(0, X) throws no Exception -> [X,A,B,C]
+    add(1, X) throws no Exception -> [A,X,B,C]
+    removeFirst() throws no Exception -> [B,C,D]
+    removeLast() throws no Exception -> [A,B]
+    remove(X) throws NoSuchElementException
+    remove(-1) throws IndexOutOfBoundsException
+    remove(0) throws no Exception -> [B, C]
+    set(-1, X) throws IndexOutOfBoundsException
+    set(0, X) throws no Exception -> [X,B,C]
+    get(-1) throws IndexOutOfBoundsException
+    get(0) returns "A"
+    indexOf(X) throws NoSuchElementException
+    first() returns "A"
+    last() returns "C"
+    contains(X) returns "false"
+    isEmpty() returns "false"
+    size() returns "3"
+    toString returns "[A,B,C]
+
 21) [A,B] -> add(C) -> [A,B,C]
 22) [A,B] -> add(0,C) -> [C,A,B]
 23) [A,B] -> add(1,C) -> [A,C,B] //TODO
 24) [A,B] -> add (2,C) -> [A,B,C]
 25) [A,B] -> removeFirst() -> [B] //TODO
 26) [A,B] -> removeLast() -> [A] //TODO
-27) [A,B] -> remove(A) -> [B] //TODO
+27) [A,B] -> remove(A) -> [B] // KELSI - DONE 
+  Tests:
+    addToFront(X) throws no Exception -> [X, B]
+    addToRear(X) throws no Exception -> [B, X]
+    addAfter(X, Z) throws NoSuchElementException
+    add(X) throws no Exception -> [B, X]
+    add(-1, X) throws IndexOutOfBoundsException
+    add(0, X) throws no Exception -> [X, B]
+    add(1, X) throws no Exception -> [B, X]
+    removeFirst() throws no Xxception -> []
+    removeLast() throws no Exception -> []
+    remove(X) throws NoSuchElementException
+    remove(-1) throws IndexOutOfBoundsException
+    remove(0) throws no Exception -> []
+    set(-1, X) throws IndexOutOfBoundsException
+    set(0, X) throws no Exception -> [X]
+    get(-1) throws IndexOutOfBoundsException
+    get(0) returns "B"
+    indexOf(X) throws NoSuchElementException
+    first() returns "B"
+    last() returns "B"
+    contains(X) returns "false"
+    isEmpty() returns "false"
+    size() returns "1"
+    toString returns "[B]"
+
 28) [A,B] -> remove(B) -> [A] //TODO
 29) [A,B] -> remove(0) -> [B] //TODO
-30) [A,B] -> remove(1) -> [A] //TODO
+30) [A,B] -> remove(1) -> [A] // KELSI - DONE
+  Tests:
+    addToFront(X) throws no Exception -> [X,A]
+    addToRear(X) throws no Exception -> [A,X]
+    addAfter(X, Z) throws NoSuchElementException
+    add(X) throws no Exception -> [A,X]
+    add(-1, X) throws IndexOutOfBoundsException
+    add(0, X) throws no Exception -> [X]
+    add(1, X) throws no Exception -> [A,X]
+    removeFirst() throws no Exception -> []
+    removeLast() throws no Exception -> []
+    remove(X) throws NoSuchElementException
+    remove(-1) throws IndexOutOfBoundsException
+    remove(0) throws no Exception []
+    set(-1, X) throws IndexOutOfBoundsException
+    set(0, X) throws no Exception -> [X]
+    get(-1) returns IndexOutOfBoundsException
+    get(0) returns "A"
+    indexOf(X) returns "-1"
+    first() returns "A"
+    last() returns "A"
+    contains(X) returns "false"
+    isEmpty() returns "false"
+    size() returns "1"
+    toString returns "[A]"
+
 31) [A,B] -> set(0,C) -> [C,B]
 32) [A,B] -> set(1,C) -> [A,C]
 33) [A,B,C] -> removeFirst() -> [B,C] //TODO
@@ -130,6 +229,30 @@ This is a test to push. // Test
 35) [A,B,C] -> remove(A) -> [B,C]
 36) [A,B,C] -> remove(B) -> [A,C]
 37) [A,B,C] -> remove(C) -> [A,B] //TODO
+  Tests:
+    addToFront(X) 
+    addToRear(X)
+    addAfter(X, Z)
+    add(X)
+    add(-1, X)
+    add(0, X)
+    add(1, X)
+    removeFirst()
+    removeLast()
+    remove(X)
+    remove(-1)
+    remove(0)
+    set(-1, X)
+    set(0, X)
+    get(-1)
+    get(0)
+    indexOf(X)
+    first()
+    last()
+    contains(X)
+    isEmpty()
+    size()
+    toString
 38) [A,B,C] -> remove(0) -> [B,C]
 39) [A,B,C] -> remove(1) -> [A,C]
   Tests:
