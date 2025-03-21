@@ -293,6 +293,7 @@ This is a test to push. // Test
 28) [A,B] -> remove(B) -> [A] //TODO
 29) [A,B] -> remove(0) -> [B] //TODO
 30) [A,B] -> remove(1) -> [A] @KELSI-DONE
+  
   Tests:
     // Adding Elements Test
     addToFront(X) throws no Exception -> [X,A]
