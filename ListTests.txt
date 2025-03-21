@@ -31,7 +31,7 @@ This is a test to push. // Test
     toString returns "[]"
 2) [] -> addToFront(A) -> [A] //TODO
 3) [] -> addToRear(A) -> [A] //TODO
-4) [] -> add(A) -> [A] // KELSI - DONE
+4) [] -> add(A) -> [A] @KELSI-DONE
   Tests:
     addToFront(X) throws no Exception -> [X, A]
     addToRear(X) throws no Exception -> [A, X]
@@ -136,7 +136,7 @@ Tests:
 17) [A,B] -> addToFront(C) -> [C,A,B] //TODO
 18) [A,B] -> addToRear(C) -> [A,B,C]
 19) [A,B] -> addAfter(C,A) -> [A,C,B]
-20) [A,B] -> addAfter(C,B) -> [A,B,C] //TODO
+20) [A,B] -> addAfter(C,B) -> [A,B,C] @KELSI-DONE
   Tests:
     addToFront(X) throws no Exception -> [X,A,B,C]
     addToRear(X) throws no Exception -> [A,B,C,X]
@@ -168,7 +168,7 @@ Tests:
 24) [A,B] -> add (2,C) -> [A,B,C]
 25) [A,B] -> removeFirst() -> [B] //TODO
 26) [A,B] -> removeLast() -> [A] //TODO
-27) [A,B] -> remove(A) -> [B] // KELSI - DONE 
+27) [A,B] -> remove(A) -> [B] // @KELSI-DONE 
   Tests:
     addToFront(X) throws no Exception -> [X, B]
     addToRear(X) throws no Exception -> [B, X]
@@ -196,7 +196,7 @@ Tests:
 
 28) [A,B] -> remove(B) -> [A] //TODO
 29) [A,B] -> remove(0) -> [B] //TODO
-30) [A,B] -> remove(1) -> [A] // KELSI - DONE
+30) [A,B] -> remove(1) -> [A] @KELSI-DONE
   Tests:
     addToFront(X) throws no Exception -> [X,A]
     addToRear(X) throws no Exception -> [A,X]
