@@ -32,6 +32,31 @@ This is a test to push. // Test
 2) [] -> addToFront(A) -> [A] //TODO
 3) [] -> addToRear(A) -> [A] //TODO
 4) [] -> add(A) -> [A] //TODO
+  Tests:
+    addToFront(X) 
+    addToRear(X)
+    addAfter(X, Z)
+    add(X)
+    add(-1, X)
+    add(0, X)
+    add(1, X)
+    removeFirst()
+    removeLast()
+    remove(X)
+    remove(-1)
+    remove(0)
+    set(-1, X)
+    set(0, X)
+    get(-1)
+    get(0)
+    indexOf(X)
+    first()
+    last()
+    contains(X)
+    isEmpty()
+    size()
+    toString
+
 5) [] -> add(0,A) -> [A] //TODO
 6) [A] -> addToFront(B) -> [B,A]
   Tests:
