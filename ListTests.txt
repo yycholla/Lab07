@@ -2,7 +2,7 @@ Initial Test Plan for an IndexedUnsortedList
 
 Define tests for the 22 change scenarios, in addition to the 3 given as examples. (Total of 25)
 
-This is a test to push. // Test to push 
+This is a test to push. // Test 
 
 1) no list -> constructor -> []
   Tests:
