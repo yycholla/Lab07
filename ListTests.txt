@@ -53,7 +53,7 @@ This is a test to push.
     get(-1) throws IndexOutOfBoundsException
     get(0) returns A
     get(1) throws IndexOutOfBoundsException
-    indexOf(A) returns 1
+    indexOf(A) returns 0
     indexOf(X) returns -1
     first() returns A
     last() returns A
@@ -245,7 +245,7 @@ Tests:
     get(3) throws IndexOutOfBoundsException
     indexOf(A) returns 0
     indexOf(B) returns 1
-    indexOf(c) returns 2
+    indexOf(C) returns 2
     indexOf(X) returns -1
     first() returns A
     last() returns C
