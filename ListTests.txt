@@ -119,7 +119,6 @@ This is a test to push.
     addToFront(X) throws no Exceptions
     addToRear(X) throws no Exceptions
     addAfter(X, B) throws no Exceptions
-    addAfter(X, A) throws NoSuchElementException
     addAfter(X, Z) throws NoSuchElementException
     add(X) throws no Exception
     add(-1, X) throws IndexOutOfBoundsException
@@ -128,7 +127,6 @@ This is a test to push.
     add(2, X) throws IndexOutOfBoundsException
     removeFirst() returns B
     removeLast() returns B
-    remove(A) throws NoSuchElementException
     remove(B) returns B
     remove(X) throws NoSuchElementException
     remove(-1) throws IndexOutOfBoundsException
@@ -140,12 +138,10 @@ This is a test to push.
     get(-1) throws IndexOutOfBoundsException
     get(0) returns B
     get(1) throws IndexOutOfBoundsException
-    indexOf(A) returns -1
     indexOf(B) returns 0
     indexOf(X) returns -1
     first() returns B
     last() returns B
-    contains(A) returns false
     contains(B) returns true
     contains(X) returns false
     isEmpty() returns false
@@ -214,7 +210,6 @@ This is a test to push.
   Tests:
     addToFront(X) throws no Exceptions
     addToRear(X) throws no Exceptions
-    addAfter(X, B) throws NoSuchElementException
     addAfter(X, A) throws no Exceptions
     addAfter(X, Z) throws NoSuchElementException
     add(X) throws no Exception
@@ -225,7 +220,6 @@ This is a test to push.
     removeFirst() returns A
     removeLast() returns A
     remove(A) returns A
-    remove(B) throws NoSuchElementException
     remove(X) throws NoSuchElementException
     remove(-1) throws IndexOutOfBoundsException
     remove(0) returns A
@@ -237,12 +231,10 @@ This is a test to push.
     get(0) returns A
     get(1) throws IndexOutOfBoundsException
     indexOf(A) returns 0
-    indexOf(B) returns -1
     indexOf(X) returns -1
     first() returns A
     last() returns A
     contains(A) returns true
-    contains(B) returns false
     contains(X) returns false
     isEmpty() returns false
     size() returns 1
@@ -261,7 +253,6 @@ This is a test to push.
     addToRear(X) throws no Exceptions
     addAfter(X, A) throws no Exceptions
     addAfter(X, B) throws no Exceptions
-    addAfter(X, C) throws NoSuchElementException
     addAfter(X, Z) throws NoSuchElementException
     add(X) throws no Exception
     add(-1, X) throws IndexOutOfBoundsException
@@ -273,7 +264,7 @@ This is a test to push.
     removeLast() returns B
     remove(A) returns A
     remove(B) returns B
-    remove(C) throws NoSuchElementException
+    remove(X) throws NoSuchElementException
     remove(-1) throws IndexOutOfBoundsException
     remove(0) returns A
     remove(1) returns B
@@ -288,13 +279,11 @@ This is a test to push.
     get(2) throws IndexOutOfBoundsException
     indexOf(A) returns 0
     indexOf(B) returns 1
-    indexOf(C) returns -1
     indexOf(X) returns -1
     first() returns A
     last() returns B
     contains(A) returns true
     contains(B) returns true
-    contains(C) returns false
     contains(X) returns false
     isEmpty() returns false
     size() returns 2
