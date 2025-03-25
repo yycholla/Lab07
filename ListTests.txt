@@ -45,8 +45,8 @@ This is a test to push. // Test
     // Edge Case, Out of Bounds 
     add(2, X) throws IndexOutOfBoundsException
     addAfter(C, A) throws no Exception -> [A, C]
-    addAfter(D, B) throws no Exception -> [A, D]
-    addAfter(E, B) throws no Exception -> [E, A]
+    addAfter(D, B) throws NoSuchElementException
+    addAfter(E, B) throws NoSuchElementException
 
     // Removing Elements Test
     removeFirst() throws no Exception -> []
@@ -145,9 +145,9 @@ This is a test to push. // Test
     addToFront(X) throws NoSuchElementException
     addToRear(X) throws NoSuchElementException
     addAfter(X, Z) throws NoSuchElementException
-    add(X) throws NoSuchElementException
+    add(X) throws no Exception -> [A]
     add(-1, X) throws IndexOutOfBoundsException
-    add(0, X) throws NoSuchElementException
+    add(0, X) throws no Exception -> [X]
     add(1, X) throws IndexOutOfBoundsException
 
     // Extra Tests
@@ -177,7 +177,7 @@ This is a test to push. // Test
     get(-1) returns IndexOutOfBoundsException
     get(0) returns NoSuchElementException
 
-    //Extra Tests 
+    // Extra Tests 
     get(1) throws NoSuchElementException
     get(2) throws NoSuchElementException
 
@@ -205,6 +205,9 @@ This is a test to push. // Test
     addToFront(X) throws no Exception -> [X,A,B,C]
     addToRear(X) throws no Exception -> [A,B,C,X]
     addAfter(X, Z) throws NoSuchElementException
+    addAfter(X, A) throws no Exception -> [A, X, B, C]
+    addAfter(X, B) throws no Exception -> [A, B, X, C]
+    addAfter(X, C) throws no Exception -> [A, B, C, X]
     add(X) throws no Exception -> [A, B, C, X]
     add(-1, X) throws IndexOutOfBoundsException
     add(0, X) throws no Exception -> [X,A,B,C]
@@ -219,24 +222,31 @@ This is a test to push. // Test
     removeFirst() throws no Exception -> [B,C]
     removeLast() throws no Exception -> [A,B]
     remove(X) throws NoSuchElementException
+    remove(A) returns A
+    remove(B) returns B
     remove(-1) throws IndexOutOfBoundsException
-    remove(0) throws no Exception -> [B, C]
+    remove(0) returns A throws no Exception -> [B, C]
+    remove(1) returns B throws no Exception -> [A, C]
+    remove(2) returns C throws no Exception -> [A, B]
+    remove(3) throws IndexOutOfBoundsException
 
     // Edge Case
     remove(2) throws no Exception -> [A, B]
     remove(3) throws IndexOutOfBoundsException
 
     // Extra Tests
-    addAfter(C, A) throws no Exception -> [A, C, B]
-    addAfter(D, B) throws no Exception -> [A, B, D]
-    addAfter(E, B) throws no Exception -> [A, B, E, C]
+    addAfter(X, A) throws no Exception -> [A, B, C, X]
+    addAfter(X, B) throws no Exception -> [A, B, X, C]
+    addAfter(X, C) throws no Exception -> [A, B, C, X]
+    addAfter(X, Z) throws NoSuchElementException
 
     // Modifying Element Test
     set(-1, X) throws IndexOutOfBoundsException
-    set(0, X) throws no Exception -> [X,B,C]
+    set(0, X) throws no Exception -> [X, B, C]
 
     // Edge Cases 
-    set(2, X) throws no Expcetion -> [A, B, X]
+    set(1, X) throws no Exception -> [A, X, C]
+    set(2, X) throws no Exception -> [A, B, X]
     set(3, X) throws IndexOutOfBoundsException
 
     // Retrieving Elements Test
@@ -250,9 +260,15 @@ This is a test to push. // Test
 
     // Searching Test
     indexOf(X) -> -1
+    indexOf(A) returns 0
+    indexOf(B) returns 1
+    indexOf(C) returns 2
     first() returns "A"
     last() returns "C"
     contains(X) returns false
+    contains(A) returns true
+    contains(B) returns true
+    contains(C) returns true
 
     // Checking Size and State Test
     isEmpty() returns false
@@ -274,6 +290,7 @@ This is a test to push. // Test
     addToFront(X) throws no Exception -> [X, B]
     addToRear(X) throws no Exception -> [B, X]
     addAfter(X, Z) throws NoSuchElementException
+    addAfter(X, B) throws no Exception
     add(X) throws no Exception -> [B, X]
     add(-1, X) throws IndexOutOfBoundsException
     add(0, X) throws no Exception -> [X, B]
@@ -286,8 +303,9 @@ This is a test to push. // Test
     removeFirst() throws no Exception -> []
     removeLast() throws no Exception -> []
     remove(X) throws NoSuchElementException
+    remove(B) returns B
     remove(-1) throws IndexOutOfBoundsException
-    remove(0) throws no Exception -> []
+    remove(0) returns B
 
     // Edge Case
     remove(1) throws IndexOutOfBoundsException
@@ -308,9 +326,11 @@ This is a test to push. // Test
 
     // Searching Test
     indexOf(X) returns -1
+    indexOf(B) returns 1
     first() returns "B"
     last() returns "B"
     contains(X) returns false
+    contains(B) returns true
 
     // Checking Size and State Tests
     isEmpty() returns false
@@ -322,12 +342,12 @@ This is a test to push. // Test
 28) [A,B] -> remove(B) -> [A] //TODO
 29) [A,B] -> remove(0) -> [B] //TODO
 30) [A,B] -> remove(1) -> [A] @KELSI 
-  
   Tests:
     // Adding Elements Test
     addToFront(X) throws no Exception -> [X,A]
     addToRear(X) throws no Exception -> [A,X]
     addAfter(X, Z) throws NoSuchElementException
+    addAfter(X, A) throws no Exception 
     add(X) throws no Exception -> [A,X]
     add(-1, X) throws IndexOutOfBoundsException
     add(0, X) throws no Exception -> [X]
@@ -340,8 +360,9 @@ This is a test to push. // Test
     removeFirst() throws no Exception -> []
     removeLast() throws no Exception -> []
     remove(X) throws NoSuchElementException
+    remove(A) throws no Exception -> []
     remove(-1) throws IndexOutOfBoundsException
-    remove(0) throws no Exception []
+    remove(0) returns "A"
 
     // Edge Case
     remove(1) throws IndexOutOfBoundsException
@@ -362,9 +383,11 @@ This is a test to push. // Test
 
     // Searching Test
     indexOf(X) returns -1
+    indexOf(A) returns 0
     first() returns "A"
     last() returns "A"
     contains(X) returns false
+    contains(A) returns true
 
     // Checking Size and State Test
     isEmpty() returns false
