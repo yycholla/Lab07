@@ -31,34 +31,66 @@ This is a test to push. // Test
     toString returns "[]"
 2) [] -> addToFront(A) -> [A] //TODO
 3) [] -> addToRear(A) -> [A] //TODO
-4) [] -> add(A) -> [A] @KELSI-DONE
+4) [] -> add(A) -> [A] @KELSI
   Tests:
+    // Adding Elements Tests
     addToFront(X) throws no Exception -> [X, A]
     addToRear(X) throws no Exception -> [A, X]
     addAfter(X, Z) throws NoSuchElementException
     add(X) throws no Exception -> [A, X]
-    add(-1, X) throw IndexOutOfBoundsException
+    add(-1, X) throws IndexOutOfBoundsException
     add(0, X) throws no Exception -> [X, A]
     add(1, X) throws no Exception -> [A, X]
+
+    // Edge Case, Out of Bounds 
+    add(2, X) throws IndexOutOfBoundsException
+    addAfter(C, A) throws no Exception -> [A, C]
+    addAfter(D, B) throws no Exception -> [A, D]
+    addAfter(E, B) throws no Exception -> [E, A]
+
+    // Removing Elements Test
     removeFirst() throws no Exception -> []
     removeLast() throws no Exception -> []
     remove(X) throws NoSuchElementException
     remove(-1) throws IndexOutOfBoundsException
     remove(0) throws no Exception -> []
+
+    // Edge Case
+    remove(1) throws IndexOutOfBoundsException
+    remove(A) throws no Exception -> []
     set(-1, X) throws IndexOutOfBoundsException
     set(0, X) throws no Exception -> [X]
+
+    // Edge Case
+    set(1, X) throws IndexOutOfBoundsException
+
+    // Retrieving Elements Tests
     get(-1) throws IndexOutOfBoundsException
     get(0) throws no Exception -> "A"
+
+    // Edge Case
+    get(1) throws IndexOutOfBoundsException
+    get(2) throws IndexOutOfBoundsException
+
+    // Searching Tests 
     indexOf(X) returns -1
+    indexOf("A") returns 0
+
     first() returns "A"
     last() returns "A"
-    contains(X) returns "false"
-    isEmpty() returns "false" 
-    size() returns "1"
-    toString returns "[A]"
+    contains(X) returns false
+    contains(A) returns true
+
+    // Checking Size and State of List
+    isEmpty() returns false 
+    size() returns 1
+
+    // String Representation of List 
+    toString() returns "[A]"
    
 5) [] -> add(0,A) -> [A] //TODO
 6) [A] -> addToFront(B) -> [B,A]
+
   Tests:
     addToFront(X) throws no Exceptions
     addToRear(X) throws no Exceptions
@@ -107,60 +139,127 @@ This is a test to push. // Test
 12) [A] -> removeFirst() -> [] //TODO
 13) [A] -> removeLast() -> [] //TODO
 14) [A] -> remove(A) -> [] //TODO
-Tests:
-    addToFront(X) throws no Exception -> [X]
-    addToRear(X) throws no Exception -> [X]
+15) [A] -> remove(0) -> [] // KELSI
+  Tests:
+    // Adding Elements Test
+    addToFront(X) throws NoSuchElementException
+    addToRear(X) throws NoSuchElementException
     addAfter(X, Z) throws NoSuchElementException
-    add(X) throws NoSuchElementException -> [X]
+    add(X) throws NoSuchElementException
     add(-1, X) throws IndexOutOfBoundsException
-    add(0, X) throws no Exception [X]
+    add(0, X) throws NoSuchElementException
     add(1, X) throws IndexOutOfBoundsException
+
+    // Extra Tests
+    addAfter(C, A) throws NoSuchElementException
+    addAfter(D, B) throws NoSuchElementException
+    addAfter(E, B) throws NoSuchElementException
+
+    // Removing Elements Test 
     removeFirst() throws NoSuchElementException
     removeLast() throws NoSuchElementException
     remove(X) throws NoSuchElementException
     remove(-1) throws IndexOutOfBoundsException
     remove(0) throws IndexOutOfBoundsException
+
+    // Extra Tests
+    remove(A) throws NoSuchElementException
+
+    // Modifying Elements Test
     set(-1, X) throws IndexOutOfBoundsException
     set(0, X) throws NoSuchElementException
+
+    // Extra Tests
+    set(1, D) throws NoSuchElementException
+    set(2, E) throws NoSuchElementException
+
+    // Retrieving Elements Test
     get(-1) returns IndexOutOfBoundsException
     get(0) returns NoSuchElementException
+
+    //Extra Tests 
+    get(1) throws NoSuchElementException
+    get(2) throws NoSuchElementException
+
+    // Searching Test 
     indexOf(X) returns -1
     first() throws NoSuchElementException
     last() throws NoSuchElementException
-    contains(X) returns "false"
-    isEmpty() returns "true"
-    size() returns "0"
-    toString returns []
-15) [A] -> remove(0) -> [] // KELSI - DONE
+    contains(X) returns false
+    contains(A) returns false
+
+    // Checking Size and State Test
+    isEmpty() returns true
+    size() returns 0
+
+    // String Representation of List 
+    toString() returns "[]"
+
 16) [A] -> set(0,B) -> [B] //TODO
 17) [A,B] -> addToFront(C) -> [C,A,B] //TODO
 18) [A,B] -> addToRear(C) -> [A,B,C]
 19) [A,B] -> addAfter(C,A) -> [A,C,B]
-20) [A,B] -> addAfter(C,B) -> [A,B,C] @KELSI-DONE
+20) [A,B] -> addAfter(C,B) -> [A,B,C] @KELSI
   Tests:
+    // Adding Elements Test
     addToFront(X) throws no Exception -> [X,A,B,C]
     addToRear(X) throws no Exception -> [A,B,C,X]
     addAfter(X, Z) throws NoSuchElementException
-    add(X) throws no Exception -> [X,A,B,C]
+    add(X) throws no Exception -> [A, B, C, X]
     add(-1, X) throws IndexOutOfBoundsException
     add(0, X) throws no Exception -> [X,A,B,C]
     add(1, X) throws no Exception -> [A,X,B,C]
-    removeFirst() throws no Exception -> [B,C,D]
+
+    // Edge Case Adds
+    add(2, X) throws no Exception -> [A, B, X, C]
+    add(3, X) throws no Exception -> [A, B, C, X]
+    add(4, X) throws IndexOutOfBoundsException
+
+    // Remove Elements Test 
+    removeFirst() throws no Exception -> [B,C]
     removeLast() throws no Exception -> [A,B]
     remove(X) throws NoSuchElementException
     remove(-1) throws IndexOutOfBoundsException
     remove(0) throws no Exception -> [B, C]
+
+    // Edge Case
+    remove(2) throws no Exception -> [A, B]
+    remove(3) throws IndexOutOfBoundsException
+
+    // Extra Tests
+    addAfter(C, A) throws no Exception -> [A, C, B]
+    addAfter(D, B) throws no Exception -> [A, B, D]
+    addAfter(E, B) throws no Exception -> [A, B, E, C]
+
+    // Modifying Element Test
     set(-1, X) throws IndexOutOfBoundsException
     set(0, X) throws no Exception -> [X,B,C]
+
+    // Edge Cases 
+    set(2, X) throws no Expcetion -> [A, B, X]
+    set(3, X) throws IndexOutOfBoundsException
+
+    // Retrieving Elements Test
     get(-1) throws IndexOutOfBoundsException
     get(0) returns "A"
-    indexOf(X) throws NoSuchElementException
+
+    // Edge Cases
+    get(1) returns "B"
+    get(2) returns "C"
+    get(3) throws IndexOutOfBoundsException
+
+    // Searching Test
+    indexOf(X) -> -1
     first() returns "A"
     last() returns "C"
-    contains(X) returns "false"
-    isEmpty() returns "false"
-    size() returns "3"
-    toString returns "[A,B,C]
+    contains(X) returns false
+
+    // Checking Size and State Test
+    isEmpty() returns false
+    size() returns 3
+
+    // String Representation of List
+    toString returns "[A,B,C]"
 
 21) [A,B] -> add(C) -> [A,B,C]
 22) [A,B] -> add(0,C) -> [C,A,B]
@@ -168,8 +267,10 @@ Tests:
 24) [A,B] -> add (2,C) -> [A,B,C]
 25) [A,B] -> removeFirst() -> [B] //TODO
 26) [A,B] -> removeLast() -> [A] //TODO
-27) [A,B] -> remove(A) -> [B] // @KELSI-DONE 
+27) [A,B] -> remove(A) -> [B] // @KELSI
+
   Tests:
+    // Adding Elements Test 
     addToFront(X) throws no Exception -> [X, B]
     addToRear(X) throws no Exception -> [B, X]
     addAfter(X, Z) throws NoSuchElementException
@@ -177,27 +278,53 @@ Tests:
     add(-1, X) throws IndexOutOfBoundsException
     add(0, X) throws no Exception -> [X, B]
     add(1, X) throws no Exception -> [B, X]
-    removeFirst() throws no Xxception -> []
+
+    // Edge Case
+    add(2, X) throws IndexOutOfBoundsException
+
+    // Removing Element Test
+    removeFirst() throws no Exception -> []
     removeLast() throws no Exception -> []
     remove(X) throws NoSuchElementException
     remove(-1) throws IndexOutOfBoundsException
     remove(0) throws no Exception -> []
+
+    // Edge Case
+    remove(1) throws IndexOutOfBoundsException
+
+    // Modifying Elements Test
     set(-1, X) throws IndexOutOfBoundsException
     set(0, X) throws no Exception -> [X]
+
+    // Edge Case
+    set(1, X) throws IndexOutOfBoundsException 
+
+    // Retrieving Elements Test
     get(-1) throws IndexOutOfBoundsException
     get(0) returns "B"
-    indexOf(X) throws NoSuchElementException
+
+    // Edge Case
+    get(1) throws IndexOutOfBoundsException
+
+    // Searching Test
+    indexOf(X) returns -1
     first() returns "B"
     last() returns "B"
-    contains(X) returns "false"
-    isEmpty() returns "false"
-    size() returns "1"
-    toString returns "[B]"
+    contains(X) returns false
+
+    // Checking Size and State Tests
+    isEmpty() returns false
+    size() returns 1
+
+    // String Representation of List 
+    toString() returns "[B]"
 
 28) [A,B] -> remove(B) -> [A] //TODO
 29) [A,B] -> remove(0) -> [B] //TODO
-30) [A,B] -> remove(1) -> [A] @KELSI-DONE
+30) [A,B] -> remove(1) -> [A] @KELSI 
+  
   Tests:
+    // Adding Elements Test
     addToFront(X) throws no Exception -> [X,A]
     addToRear(X) throws no Exception -> [A,X]
     addAfter(X, Z) throws NoSuchElementException
@@ -205,22 +332,46 @@ Tests:
     add(-1, X) throws IndexOutOfBoundsException
     add(0, X) throws no Exception -> [X]
     add(1, X) throws no Exception -> [A,X]
+
+    // Edge Case
+    add(2, X) throws IndexOutOfBoundsException
+
+    // Removing Elements Test
     removeFirst() throws no Exception -> []
     removeLast() throws no Exception -> []
     remove(X) throws NoSuchElementException
     remove(-1) throws IndexOutOfBoundsException
     remove(0) throws no Exception []
+
+    // Edge Case
+    remove(1) throws IndexOutOfBoundsException
+
+    // Modifying Element Test
     set(-1, X) throws IndexOutOfBoundsException
     set(0, X) throws no Exception -> [X]
+
+    // Edge Case
+    set(1, X) throws IndexOutOfBoundsException
+
+    // Retrieving Element Test
     get(-1) returns IndexOutOfBoundsException
     get(0) returns "A"
-    indexOf(X) returns "-1"
+
+    // Edge Case
+    get(1) throws IndexOutOfBoundsException
+
+    // Searching Test
+    indexOf(X) returns -1
     first() returns "A"
     last() returns "A"
-    contains(X) returns "false"
-    isEmpty() returns "false"
-    size() returns "1"
-    toString returns "[A]"
+    contains(X) returns false
+
+    // Checking Size and State Test
+    isEmpty() returns false
+    size() returns 1
+
+    // String Representation of List 
+    toString() returns "[A]"
 
 31) [A,B] -> set(0,C) -> [C,B]
 32) [A,B] -> set(1,C) -> [A,C]
@@ -229,30 +380,6 @@ Tests:
 35) [A,B,C] -> remove(A) -> [B,C]
 36) [A,B,C] -> remove(B) -> [A,C]
 37) [A,B,C] -> remove(C) -> [A,B] //TODO
-  Tests:
-    addToFront(X) 
-    addToRear(X)
-    addAfter(X, Z)
-    add(X)
-    add(-1, X)
-    add(0, X)
-    add(1, X)
-    removeFirst()
-    removeLast()
-    remove(X)
-    remove(-1)
-    remove(0)
-    set(-1, X)
-    set(0, X)
-    get(-1)
-    get(0)
-    indexOf(X)
-    first()
-    last()
-    contains(X)
-    isEmpty()
-    size()
-    toString
 38) [A,B,C] -> remove(0) -> [B,C]
 39) [A,B,C] -> remove(1) -> [A,C]
   Tests:
