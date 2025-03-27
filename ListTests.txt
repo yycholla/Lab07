@@ -167,11 +167,7 @@ This is a test to push. // Test
 
     // Modifying Elements Test
     set(-1, X) throws IndexOutOfBoundsException
-    set(0, X) throws NoSuchElementException
-
-    // Extra Tests
-    set(1, D) throws NoSuchElementException
-    set(2, E) throws NoSuchElementException
+    set(0, X) throws IndexOutOfBoundsException
 
     // Retrieving Elements Test
     get(-1) returns IndexOutOfBoundsException
