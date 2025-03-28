@@ -585,7 +585,7 @@ Tests:
 34) [A,B,C] -> removeLast() -> [A,B]
 35) [A,B,C] -> remove(A) -> [B,C]
 36) [A,B,C] -> remove(B) -> [A,C]
-37) [A,B,C] -> remove(C) -> [A,B] @TylerAndrews
+37) [A,B,C] -> remove(C) -> [A,B] @TylerAndrews @yycholla
   Tests:
     addToFront(X) throws no Exceptions
     addToRear(X) throws no Exceptions
