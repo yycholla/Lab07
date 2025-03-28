@@ -265,7 +265,7 @@ This is a test to push.
 11) [A] -> add(1,B) -> [A,B]
 12) [A] -> removeFirst() -> []
 13) [A] -> removeLast() -> [] @yycholla
-Tests:
+  Tests:
     addToFront(X) throws no Exception
     addToRear(X) throws no Exception
     addAfter(X, Z) throws NoSuchElementException
