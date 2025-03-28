@@ -145,7 +145,7 @@ This is a test to push. // Test
     addToFront(X) throws NoSuchElementException
     addToRear(X) throws NoSuchElementException
     addAfter(X, Z) throws NoSuchElementException
-    add(X) throws no Exception -> [A]
+    add(X) throws no Exception -> [X]
     add(-1, X) throws IndexOutOfBoundsException
     add(0, X) throws no Exception -> [X]
     add(1, X) throws IndexOutOfBoundsException
@@ -167,15 +167,15 @@ This is a test to push. // Test
 
     // Modifying Elements Test
     set(-1, X) throws IndexOutOfBoundsException
-    set(0, X) throws NoSuchElementException
+    set(0, X) throws IndexOutOfBoundsException
 
     // Extra Tests
-    set(1, D) throws NoSuchElementException
-    set(2, E) throws NoSuchElementException
+    set(1, D) throws IndexOutOfBoundsException
+    set(2, E) throws IndexOutOfBoundsException
 
     // Retrieving Elements Test
     get(-1) returns IndexOutOfBoundsException
-    get(0) returns NoSuchElementException
+    get(0) returns IndexOutOfBoundsException
 
     // Extra Tests 
     get(1) throws NoSuchElementException
@@ -224,6 +224,7 @@ This is a test to push. // Test
     remove(X) throws NoSuchElementException
     remove(A) returns A
     remove(B) returns B
+    remove(C) returns C
     remove(-1) throws IndexOutOfBoundsException
     remove(0) returns A throws no Exception -> [B, C]
     remove(1) returns B throws no Exception -> [A, C]
@@ -326,7 +327,7 @@ This is a test to push. // Test
 
     // Searching Test
     indexOf(X) returns -1
-    indexOf(B) returns 1
+    indexOf(B) returns 0
     first() returns "B"
     last() returns "B"
     contains(X) returns false
