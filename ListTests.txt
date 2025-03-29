@@ -84,7 +84,7 @@ Define tests for the 22 change scenarios, in addition to the 3 given as examples
     get(-1) throws IndexOutOfBoundsException
     get(0) returns A
     get(1) throws IndexOutOfBoundsException
-    indexOf(A) returns 1      //index should be 0
+    indexOf(A) returns 0
     indexOf(X) returns -1
     first() returns A
     last() returns A
@@ -121,7 +121,7 @@ Define tests for the 22 change scenarios, in addition to the 3 given as examples
     remove(1) throws IndexOutOfBoundsException
     remove(A) throws no Exception -> []       //should only return element remove(A) return A
     set(-1, X) throws IndexOutOfBoundsException
-    set(0, X) throws no Exception -> [X]      
+    set(0, X) throws no Exception -> [X]
 
     // Edge Case
     set(1, X) throws IndexOutOfBoundsException
@@ -548,7 +548,7 @@ Define tests for the 22 change scenarios, in addition to the 3 given as examples
     addAfter(X, A) throws no Exception -> [A, B, C, X]    //line not needed, its a duplicate
     addAfter(X, B) throws no Exception -> [A, B, X, C]    //line not needed, its a duplicate
     addAfter(X, C) throws no Exception -> [A, B, C, X]    //line not needed, its a duplicate
-    addAfter(X, Z) throws NoSuchElementException          //line not needed, its a duplicate
+    addAfter(X, Z) throws NoSuchElementException          //line not needed, its a duplicate - @yycholla should use this line but no Exception
 
     // Modifying Element Test
     set(-1, X) throws IndexOutOfBoundsException
@@ -662,7 +662,7 @@ Define tests for the 22 change scenarios, in addition to the 3 given as examples
     get(-1) throws IndexOutOfBoundsException
     get(0) returns B
     get(1) throws IndexOutOfBoundsException
-    indexOf(B) returns 1      //index should be 0
+    indexOf(B) returns 0      //index should be 0
     indexOf(X) returns -1
     first() returns B
     last() returns B
