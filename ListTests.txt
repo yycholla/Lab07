@@ -84,7 +84,7 @@ Define tests for the 22 change scenarios, in addition to the 3 given as examples
     get(-1) throws IndexOutOfBoundsException
     get(0) returns A
     get(1) throws IndexOutOfBoundsException
-    indexOf(A) returns 1
+    indexOf(A) returns 1      //index should be 0
     indexOf(X) returns -1
     first() returns A
     last() returns A
@@ -111,24 +111,24 @@ Define tests for the 22 change scenarios, in addition to the 3 given as examples
     addAfter(E, B) throws NoSuchElementException
 
     // Removing Elements Test
-    removeFirst() throws no Exception -> []
-    removeLast() throws no Exception -> []
+    removeFirst() throws no Exception -> []  //should only return element removeFirst() returns A
+    removeLast() throws no Exception -> []   //should only return element removeLast() returns A
     remove(X) throws NoSuchElementException
     remove(-1) throws IndexOutOfBoundsException
     remove(0) throws no Exception -> []
 
     // Edge Case
     remove(1) throws IndexOutOfBoundsException
-    remove(A) throws no Exception -> []
+    remove(A) throws no Exception -> []       //should only return element remove(A) return A
     set(-1, X) throws IndexOutOfBoundsException
-    set(0, X) throws no Exception -> [X]
+    set(0, X) throws no Exception -> [X]      
 
     // Edge Case
     set(1, X) throws IndexOutOfBoundsException
 
     // Retrieving Elements Tests
     get(-1) throws IndexOutOfBoundsException
-    get(0) throws no Exception -> "A"
+    get(0) throws no Exception -> "A"       //should only return element get(0) return A
 
     // Edge Case
     get(1) throws IndexOutOfBoundsException
@@ -372,8 +372,8 @@ Define tests for the 22 change scenarios, in addition to the 3 given as examples
 15) [A] -> remove(0) -> [] // KELSI
   Tests:
     // Adding Elements Test
-    addToFront(X) throws NoSuchElementException
-    addToRear(X) throws NoSuchElementException
+    addToFront(X) throws NoSuchElementException     //throws no Exception
+    addToRear(X) throws NoSuchElementException      //throws no Exception
     addAfter(X, Z) throws NoSuchElementException
     add(X) throws no Exception -> [X]
     add(-1, X) throws IndexOutOfBoundsException
@@ -408,8 +408,8 @@ Define tests for the 22 change scenarios, in addition to the 3 given as examples
     get(0) returns IndexOutOfBoundsException
 
     // Extra Tests
-    get(1) throws NoSuchElementException
-    get(2) throws NoSuchElementException
+    get(1) throws NoSuchElementException    //should throw IndexOutOfBoundsException
+    get(2) throws NoSuchElementException    //should throw IndexOutOfBoundsException
 
     // Searching Test
     indexOf(X) returns -1
@@ -528,8 +528,8 @@ Define tests for the 22 change scenarios, in addition to the 3 given as examples
     add(4, X) throws IndexOutOfBoundsException
 
     // Remove Elements Test
-    removeFirst() throws no Exception -> [B,C]
-    removeLast() throws no Exception -> [A,B]
+    removeFirst() throws no Exception -> [B,C]    //should only return element removeFirst() return A
+    removeLast() throws no Exception -> [A,B]     //should only return element removeLast() return C
     remove(X) throws NoSuchElementException
     remove(A) returns A
     remove(B) returns B
@@ -541,14 +541,14 @@ Define tests for the 22 change scenarios, in addition to the 3 given as examples
     remove(3) throws IndexOutOfBoundsException
 
     // Edge Case
-    remove(2) throws no Exception -> [A, B]
-    remove(3) throws IndexOutOfBoundsException
+    remove(2) throws no Exception -> [A, B]   //line not needed, its a duplicate
+    remove(3) throws IndexOutOfBoundsException    //line not needed, its a duplicate
 
     // Extra Tests
-    addAfter(X, A) throws no Exception -> [A, B, C, X]
-    addAfter(X, B) throws no Exception -> [A, B, X, C]
-    addAfter(X, C) throws no Exception -> [A, B, C, X]
-    addAfter(X, Z) throws NoSuchElementException
+    addAfter(X, A) throws no Exception -> [A, B, C, X]    //line not needed, its a duplicate
+    addAfter(X, B) throws no Exception -> [A, B, X, C]    //line not needed, its a duplicate
+    addAfter(X, C) throws no Exception -> [A, B, C, X]    //line not needed, its a duplicate
+    addAfter(X, Z) throws NoSuchElementException          //line not needed, its a duplicate
 
     // Modifying Element Test
     set(-1, X) throws IndexOutOfBoundsException
@@ -569,7 +569,7 @@ Define tests for the 22 change scenarios, in addition to the 3 given as examples
     get(3) throws IndexOutOfBoundsException
 
     // Searching Test
-    indexOf(X) -> -1
+    indexOf(X) -> -1    //lable as return
     indexOf(A) returns 0
     indexOf(B) returns 1
     indexOf(C) returns 2
@@ -662,7 +662,7 @@ Define tests for the 22 change scenarios, in addition to the 3 given as examples
     get(-1) throws IndexOutOfBoundsException
     get(0) returns B
     get(1) throws IndexOutOfBoundsException
-    indexOf(B) returns 1
+    indexOf(B) returns 1      //index should be 0
     indexOf(X) returns -1
     first() returns B
     last() returns B
@@ -695,7 +695,7 @@ Define tests for the 22 change scenarios, in addition to the 3 given as examples
     get(-1) throws IndexOutOfBoundsException
     get(0) returns A
     get(1) throws IndexOutOfBoundsException
-    indexOf(A) returns 1
+    indexOf(A) returns 1    //index should be 0
     indexOf(X) returns -1
     first() returns A
     last() returns A
@@ -720,8 +720,8 @@ Define tests for the 22 change scenarios, in addition to the 3 given as examples
     add(2, X) throws IndexOutOfBoundsException
 
     // Removing Element Test
-    removeFirst() throws no Exception -> []
-    removeLast() throws no Exception -> []
+    removeFirst() throws no Exception -> []   //should only return the element removeFirst() returns B
+    removeLast() throws no Exception -> []    //should only return the element removeLast() returns B
     remove(X) throws NoSuchElementException
     remove(B) returns B
     remove(-1) throws IndexOutOfBoundsException
@@ -843,10 +843,10 @@ Define tests for the 22 change scenarios, in addition to the 3 given as examples
     add(2, X) throws IndexOutOfBoundsException
 
     // Removing Elements Test
-    removeFirst() throws no Exception -> []
-    removeLast() throws no Exception -> []
+    removeFirst() throws no Exception -> []   //should only return element removeFirst() returns A
+    removeLast() throws no Exception -> []    //should only return element removeLast() returns A
     remove(X) throws NoSuchElementException
-    remove(A) throws no Exception -> []
+    remove(A) throws no Exception -> []       //should only return element remove(A) returns A
     remove(-1) throws IndexOutOfBoundsException
     remove(0) returns "A"
 
@@ -927,7 +927,6 @@ Define tests for the 22 change scenarios, in addition to the 3 given as examples
     isEmpty() returns false
     size() returns 2
     toString() returns "[B, C]"
-33) [A,B,C] -> removeFirst() -> [B,C] // TODO
 34) [A,B,C] -> removeLast() -> [A,B]
 35) [A,B,C] -> remove(A) -> [B,C]
 36) [A,B,C] -> remove(B) -> [A,C]
