@@ -183,7 +183,6 @@ Define tests for the 22 change scenarios, in addition to the 3 given as examples
     size() returns 1
     toString returns "[A]"
 6) [A] -> addToFront(B) -> [B,A]
-
   Tests:
     addToFront(X) throws no Exceptions
     addToRear(X) throws no Exceptions
@@ -807,6 +806,7 @@ Define tests for the 22 change scenarios, in addition to the 3 given as examples
     removeLast() returns B
     remove(B) returns B
     remove(A) throws NoSuchElementException
+    remove(X) throws NoSuchElementException
     remove(-1) throws IndexOutOfBoundsException
     remove(0) returns B
     remove(1) throws IndexOutOfBoundsException
@@ -902,6 +902,7 @@ Define tests for the 22 change scenarios, in addition to the 3 given as examples
     remove(A) throws NoSuchElementException
     remove(B) returns B
     remove(C) returns C
+    remove(X) throws NoSuchElementException
     remove(-1) throws IndexOutOfBoundsException
     remove(0) returns B
     remove(1) returns C
