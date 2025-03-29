@@ -2,7 +2,7 @@ Initial Test Plan for an IndexedUnsortedList
 
 Define tests for the 22 change scenarios, in addition to the 3 given as examples. (Total of 25)
 
-This is a test to push. // Test 
+This is a test to push. // Test
 
 1) no list -> constructor -> []
   Tests:
@@ -42,7 +42,7 @@ This is a test to push. // Test
     add(0, X) throws no Exception -> [X, A]
     add(1, X) throws no Exception -> [A, X]
 
-    // Edge Case, Out of Bounds 
+    // Edge Case, Out of Bounds
     add(2, X) throws IndexOutOfBoundsException
     addAfter(C, A) throws no Exception -> [A, C]
     addAfter(D, B) throws NoSuchElementException
@@ -72,7 +72,7 @@ This is a test to push. // Test
     get(1) throws IndexOutOfBoundsException
     get(2) throws IndexOutOfBoundsException
 
-    // Searching Tests 
+    // Searching Tests
     indexOf(X) returns -1
     indexOf("A") returns 0
 
@@ -82,12 +82,12 @@ This is a test to push. // Test
     contains(A) returns true
 
     // Checking Size and State of List
-    isEmpty() returns false 
+    isEmpty() returns false
     size() returns 1
 
-    // String Representation of List 
+    // String Representation of List
     toString() returns "[A]"
-   
+
 5) [] -> add(0,A) -> [A] //TODO
 6) [A] -> addToFront(B) -> [B,A]
 
@@ -145,7 +145,7 @@ This is a test to push. // Test
     addToFront(X) throws NoSuchElementException
     addToRear(X) throws NoSuchElementException
     addAfter(X, Z) throws NoSuchElementException
-    add(X) throws no Exception -> [A]
+    add(X) throws no Exception -> [X]
     add(-1, X) throws IndexOutOfBoundsException
     add(0, X) throws no Exception -> [X]
     add(1, X) throws IndexOutOfBoundsException
@@ -155,7 +155,7 @@ This is a test to push. // Test
     addAfter(D, B) throws NoSuchElementException
     addAfter(E, B) throws NoSuchElementException
 
-    // Removing Elements Test 
+    // Removing Elements Test
     removeFirst() throws NoSuchElementException
     removeLast() throws NoSuchElementException
     remove(X) throws NoSuchElementException
@@ -169,15 +169,19 @@ This is a test to push. // Test
     set(-1, X) throws IndexOutOfBoundsException
     set(0, X) throws IndexOutOfBoundsException
 
+    // Extra Tests
+    set(1, D) throws IndexOutOfBoundsException
+    set(2, E) throws IndexOutOfBoundsException
+
     // Retrieving Elements Test
     get(-1) returns IndexOutOfBoundsException
-    get(0) returns NoSuchElementException
+    get(0) returns IndexOutOfBoundsException
 
-    // Extra Tests 
+    // Extra Tests
     get(1) throws NoSuchElementException
     get(2) throws NoSuchElementException
 
-    // Searching Test 
+    // Searching Test
     indexOf(X) returns -1
     first() throws NoSuchElementException
     last() throws NoSuchElementException
@@ -188,7 +192,7 @@ This is a test to push. // Test
     isEmpty() returns true
     size() returns 0
 
-    // String Representation of List 
+    // String Representation of List
     toString() returns "[]"
 
 16) [A] -> set(0,B) -> [B] //TODO
@@ -214,12 +218,13 @@ This is a test to push. // Test
     add(3, X) throws no Exception -> [A, B, C, X]
     add(4, X) throws IndexOutOfBoundsException
 
-    // Remove Elements Test 
+    // Remove Elements Test
     removeFirst() throws no Exception -> [B,C]
     removeLast() throws no Exception -> [A,B]
     remove(X) throws NoSuchElementException
     remove(A) returns A
     remove(B) returns B
+    remove(C) returns C
     remove(-1) throws IndexOutOfBoundsException
     remove(0) returns A throws no Exception -> [B, C]
     remove(1) returns B throws no Exception -> [A, C]
@@ -240,7 +245,7 @@ This is a test to push. // Test
     set(-1, X) throws IndexOutOfBoundsException
     set(0, X) throws no Exception -> [X, B, C]
 
-    // Edge Cases 
+    // Edge Cases
     set(1, X) throws no Exception -> [A, X, C]
     set(2, X) throws no Exception -> [A, B, X]
     set(3, X) throws IndexOutOfBoundsException
@@ -282,7 +287,7 @@ This is a test to push. // Test
 27) [A,B] -> remove(A) -> [B] // @KELSI
 
   Tests:
-    // Adding Elements Test 
+    // Adding Elements Test
     addToFront(X) throws no Exception -> [X, B]
     addToRear(X) throws no Exception -> [B, X]
     addAfter(X, Z) throws NoSuchElementException
@@ -311,7 +316,7 @@ This is a test to push. // Test
     set(0, X) throws no Exception -> [X]
 
     // Edge Case
-    set(1, X) throws IndexOutOfBoundsException 
+    set(1, X) throws IndexOutOfBoundsException
 
     // Retrieving Elements Test
     get(-1) throws IndexOutOfBoundsException
@@ -322,7 +327,7 @@ This is a test to push. // Test
 
     // Searching Test
     indexOf(X) returns -1
-    indexOf(B) returns 1
+    indexOf(B) returns 0
     first() returns "B"
     last() returns "B"
     contains(X) returns false
@@ -332,18 +337,18 @@ This is a test to push. // Test
     isEmpty() returns false
     size() returns 1
 
-    // String Representation of List 
+    // String Representation of List
     toString() returns "[B]"
 
 28) [A,B] -> remove(B) -> [A] //TODO
 29) [A,B] -> remove(0) -> [B] //TODO
-30) [A,B] -> remove(1) -> [A] @KELSI 
+30) [A,B] -> remove(1) -> [A] @KELSI
   Tests:
     // Adding Elements Test
     addToFront(X) throws no Exception -> [X,A]
     addToRear(X) throws no Exception -> [A,X]
     addAfter(X, Z) throws NoSuchElementException
-    addAfter(X, A) throws no Exception 
+    addAfter(X, A) throws no Exception
     add(X) throws no Exception -> [A,X]
     add(-1, X) throws IndexOutOfBoundsException
     add(0, X) throws no Exception -> [X]
@@ -389,7 +394,7 @@ This is a test to push. // Test
     isEmpty() returns false
     size() returns 1
 
-    // String Representation of List 
+    // String Representation of List
     toString() returns "[A]"
 
 31) [A,B] -> set(0,C) -> [C,B]
